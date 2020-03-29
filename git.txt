@@ -1,0 +1,42 @@
+线下仓库
+1.创建新目录 mkdir 文件夹名
+2.进入目录 cd 目录名
+3.git仓库初始化 git init（需要显示隐藏文件“.git” 不可删除和随意更改）
+4.查看当前状态 git status
+5.添加 可添加一个至多个 git add 文件名
+		      	git add 文件名1 文件名2
+		      	git add . 添加当前目录
+6.提交 git commit -m "注释"
+后续重复使用5.6.步骤即可
+7.查看版本 确定需要回退的时间点 git log    git log --pretty=oneline
+8.回退 git reset --hard 提交编号（黄色）
+若需要撤回回退操作 查看所有更改历史记录 找到最新版本编号 git reflog 
+ps：1.要想回退版本 必须先得到commit id 然后通过git reset -hard 进行回退
+    2.要想回退到最新版本 需要使用 git reflog 进行历史操作查看 得到最新的commit id
+    3.在写回退指令时 commit id可以不用写全 git会自动识别 至少需要前四位字符
+
+init是在线下初始化仓库
+
+
+
+
+线上仓库常规使用：
+1基于http协议
+2基于SSH协议
+1
+1.创建目录 mkdir shop
+2.进入目录cd ./shop
+3.克隆线上仓库到本地 git clone 线上仓库地址 ps：可能会报错 克隆空的仓库
+4.在仓库上做对应操作（提交暂存区 提交本地仓库 提交线上仓库 拉取线上仓库）
+1）cd 仓库
+2）git add 文件名
+3）git commit -m"注释"
+4）提交到线上仓库 git push	错误403--没有权限   
+首次提交线上仓库403错误 须建权--需要修改.git/config文件  url  //用户名:密码@ 
+无fatal（致命）提交成功
+index（）
+5）拉取线上仓库 git pull ps:上班pull下班push
+
+上传操作：（现在线上创建仓库， 然后在线下所需目录进行clone）
+		add----> commit ----->plush
+
